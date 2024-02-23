@@ -1,0 +1,16 @@
+String endereco;
+String telefone;
+String salario;
+String cpf;
+Int preco;
+String temperatura:
+String casado;
+Int nascimento;.
+String vacinado;
+Int preco_gasolina;
+Int litros_gasolina;
+Int preco_pao;
+String total_compras;
+Int idade;
+Int data_contrato;
+String nivel_escolaridade;
