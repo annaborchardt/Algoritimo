@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner leia = new Scanner(System.in);
+    System.out.println(" Qual é o número?");
+    double number = Double.valueOf(leia.nextLine());
+
+    int myInt = (int) number;
+    int B = myInt - 1;
+    int A = myInt + 1;
+
+    System.out.println(" O número anterior é: " + B);
+    System.out.println(" O número posterior é: " + A);
+  }
+}
