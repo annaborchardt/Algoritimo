@@ -1,0 +1,21 @@
+public class Main {
+  public static void main(String[] args) {
+    //System.out.println();
+    double N= 9 + 8 + 7;
+    double M= 4 + 5 + 6;
+    double O= N/3;
+    double P= M/3;
+    double Q= O+P;
+    double R= Q/2;
+
+    System.out.println("A média arimetica  dos números 8, 9 e 7 é " + O);
+     System.out.println("A média arimetica  dos números 4, 5 e 6 é " + P);
+    System.out.println("A soma das duas médias é " + Q);
+    System.out.println("A média das médias é " + R);
+
+
+
+
+    
+  }
+}
