@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner SC = new Scanner(System.in);
+    System.out.println("Digite a quantidade mínima");
+    double quantidademinima = SC.nextDouble();
+    System.out.println("Digite a quantidade máxima");
+    double quantidademaxima = SC.nextDouble();
+    double somadoestoque = quantidademinima + quantidademaxima;
+    double media = somadoestoque / 2;
+
+    System.out.println("A média do estoque: " + media);
+  }
+
+ 
+}
