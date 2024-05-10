@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner SC = new Scanner(System.in);
+    System.out.println("Atualmente a cotação do dólar é:");
+    double cotacaododolar = SC.nextDouble();
+    System.out.println("Insira o valor em dólares que deseja conversão:");
+    double dolar = SC.nextDouble();
+    double conversao = dolar * cotacaododolar;
+    System.out.println("O valor da conversão em reais é: " + conversao);
+  }
+
+
+}
