@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner SC = new Scanner(System.in);
+
+    System.out.print("Quantidade de litros gastos: ");
+
+    double km= 12;
+    double litro= SC.nextDouble();
+    double juncao = km * litro;
+
+    System.out.println("Distância percorrida: " + juncao + "km");
+                    
+
+    System.out.println("Tempo de viagem:");
+
+    double tempo = SC.nextDouble();
+    double distanciakm = juncao / tempo;
+
+    double litrosusados= distanciakm/ 12;
+
+    double velociademedia = distanciakm / tempo;
+
+    System.out.println("Velocidade média: " + velociademedia + "km/h");
+
+  
+
+    
+
+
+
+
+
+
+    
+  }
+  
+
+  
+}
