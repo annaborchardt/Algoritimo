@@ -1,68 +1,69 @@
-
 import java.util.Scanner;
 
-public class Main {
-  public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
+class Pessoa {
+    double altura;
+    char sexo;
 
-    for (int i=0; i < 10; i++) {
-    System.out.println("Digite a altura da pessoa: ");
-    double altura = scanner.nextDouble();
-
-    System.out.println("Digite o sexo da pessoa (1-Feminino, 2-Masculino) ");
-    int sexo = scanner.nextInt();
-
-    if(sexo == 1) {
-
-      double menoraltura = altura; 
-      double maioraltura = altura;
-      
-
-if (altura<menoraltura) {
-    menoraltura=altura}
-
-
-
-
-      System.out.println("A menor altura é: " + menoraltura);
-      System.out.println("A maior altura é: " + maioraltura);
-
-      double homens = scanner.nextInt(2);
-      double media = scanner.nextInt(2) / homens;
-      System.out.println("A média de altura dos homens é: " + media);
-      double mulheres = scanner.nextInt(1);}
-
-      
-    
-      
-    
-
-        
+    Pessoa(double altura, char sexo) {
+        this.altura = altura;
+        this.sexo = sexo;
     }
-  }
-
-  
 }
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Pessoa[] pessoas = new Pessoa[10];
 
+        // Ler os dados das 10 pessoas
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Digite a altura da pessoa " + (i + 1) + ": ");
+            double altura = scanner.nextDouble();
+            System.out.print("Digite o sexo da pessoa " + (i + 1) + " (M/F): ");
+            char sexo = scanner.next().toUpperCase().charAt(0);
 
+            pessoas[i] = new Pessoa(altura, sexo);
+        }
 
-        
-      
-      
-      
-
-  
+        // Calcular e exibir as informações
+        calcularEExibirInformacoes(pessoas);
     }
 
-    
-    
-    
-    
-    
-    
-    
-  }
+    public static void calcularEExibirInformacoes(Pessoa[] pessoas) {
+        double somaAlturasFeminino = 0;
+        double somaAlturasMasculino = 0;
+        int countFeminino = 0;
+        int countMasculino = 0;
 
-  
+        double maiorAltura = pessoas[0].altura;
+        double menorAltura = pessoas[0].altura;
+
+        for (Pessoa pessoa : pessoas) {
+            if (pessoa.sexo == 'F') {
+                somaAlturasFeminino += pessoa.altura;
+                countFeminino++;
+            } else if (pessoa.sexo == 'M') {
+                somaAlturasMasculino += pessoa.altura;
+                countMasculino++;
+            }
+
+            if (pessoa.altura > maiorAltura) {
+                maiorAltura = pessoa.altura;
+            }
+
+            if (pessoa.altura < menorAltura) {
+                menorAltura = pessoa.altura;
+            }
+        }
+
+      
+        double mediaAlturasMasculino = (countMasculino > 0) ? somaAlturasMasculino / countMasculino : 0;
+
+        System.out.println("Maior altura do grupo: " + maiorAltura);
+        System.out.println("Menor altura do grupo: " + menorAltura);
+        
+        System.out.println("Média das alturas dos homens: " + (countMasculino > 0 ? mediaAlturasMasculino : "Nenhum homem no grupo"));
+        System.out.println("Número de mulheres: " + countFeminino);
+        
+    }
 }
