@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+    boolean igual = false;
+    boolean naoigual = false;
+    boolean maior = false;
+    boolean menor = false;
+    boolean maiorigual = false;
+    boolean menorigual = false;
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Digite um número inteiro:");
+    int numero1 = sc.nextInt();
+    System.out.println("Digite outro número inteiro:");
+    int numero2 = sc.nextInt();
+   
+   
+    if(numero1 > numero2){
+      maior = true;
+     
+    }
+    if(numero1 < numero2){
+      menor = true;
+
+    }
+    if(numero1 >= numero2){
+      maiorigual = true;
+    }
+    if(numero1 <= numero2){
+      menorigual = true;
+    }
+
+    if(numero1 == numero2){
+      igual = true;
+    }
+
+    if(numero1 != numero2){
+      naoigual = true;
+    }
+
+    System.out.println("O primeiro número é maior que o segundo? " + maior);
+    System.out.println("O primeiro número é menor que o segundo? " + menor);
+    System.out.println("O primeiro número é maior ou igual ao segundo? " + maiorigual);
+    System.out.println("O primeiro número é menor ou igual ao segundo? " + menorigual);
+    System.out.println("O primeiro número é igual ao segundo? " + igual);
+    System.out.println("O primeiro número é diferente do segundo? " + naoigual);
