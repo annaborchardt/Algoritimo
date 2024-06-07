@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main {
+  public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+  System.out.println("Digite quantos anos você tem:");
+  Double anos = sc.nextDouble();
+  double dias1 = anos * 365;
+  System.out.println("Digite quantos meses você tem:");
+  double meses = sc.nextDouble();
+  double dias2 = meses * 30;
+  System.out.println("Digite quantos dias você tem:");
+  Double dias3= sc.nextDouble();
+  Double dias4 = dias1 + dias2 + dias3;
+  System.out.println("Você tem " + dias4 + " dias de vida");
+
+
+
+
+   
+  }
+
