@@ -1,0 +1,39 @@
+//Anna Beatriz Girardi Borchardt 
+//Beatriz Borges de Lima 
+//Flávia Moretto dalcanale 
+import java.util.Scanner;
+public class Main {
+  
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    int vetor [];
+    vetor = new int [50];
+    int i;
+    int ContadorPar = 0;
+    int Multiploscinco = 0;
+    
+    for (i=0; i<50; i++) {
+      System.out.println("Digite o " + (i+1) + "º número: ");
+      vetor[i] = sc.nextInt();
+
+      if (vetor[i] % 2 == 0) {
+        ContadorPar++;
+      }
+      
+      if (vetor[i] % 5 == 0) {
+       Multiploscinco++;
+      } 
+  
+    
+
+
+    }
+    
+     System.out.println("A quantidade de números pares é: " + ContadorPar);
+     System.out.println("A quantidade de números multiplos de 5 é: " + Multiploscinco);
+    
+    
+    
+    
+  }
+}   
