@@ -1,0 +1,62 @@
+//Anna Beatriz Girardi Borchardt
+//Beatriz Borges de Lima
+//Flávia Moretto Dalcanale
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      Random rand = new Random();
+      int sorte = rand.nextInt(11);
+      int vetor [];
+      vetor = new int [10];
+      int i;
+
+      for (i=0; i<10; i++) {
+      
+        vetor[0] = 8;
+        vetor[1] = 3;
+        vetor[2] = 15;
+        vetor[3] = 10;
+        vetor[4] = 23;
+        vetor[5] = 54;
+        vetor[6] = 217;
+        vetor[7] = 79;
+        vetor[8] = 105;
+        vetor[9] = 538;
+      }
+      System.out.println("Digite um número inteiro positivo maior que zero: ");
+      int numX = sc.nextInt();
+      int maiores = 0;
+      int menores = 0;
+      int iguais = 0;
+      
+      for (i=0; i <10; i++){
+      if (vetor[i] > numX) { 
+        maiores++;
+      } else if (vetor[i] < numX){
+        menores++;
+      }
+        else if (vetor[i] == numX){
+          iguais++;
+        }
+    }  
+      System.out.println("Possuem " + maiores + " números maiores que " + numX);
+      System.out.println("Possuem " + menores + " números menores que " + numX);
+      System.out.println("Possui " + (10 - menores - maiores) + " número igual");
+
+      if (numX == sorte)
+      {
+        System.out.println("Parabéns, você acertou!");
+      }
+      
+
+        
+      
+  }
+
+  
+}
