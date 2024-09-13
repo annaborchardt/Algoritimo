@@ -1,0 +1,25 @@
+#variaveis
+
+s=True
+q=True
+z=False
+
+#conta A
+result=(s or q) and not z
+print(result)
+
+#conta B
+result=(q and not z ) or not s
+print(result)
+
+#conta C
+result= (s and q ) and (z or not s)
+print(result)
+
+#conta D
+result= (s or not q) and (not z and s)
+print(result)
+
+#conta E
+result= (not s and not q) or (not z and s)
+print(result)
