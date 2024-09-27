@@ -1,0 +1,84 @@
+//Anna Beatriz Girardi Borchardt, Flávia Moretto Dalcanale e Beatriz Borges de Lima
+
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Random rand = new Random();
+       boolean jogar= true;
+        
+     while (jogar){
+        
+        String palavras[] = {"amendoim", "livraria", "ampulheta", "burocracia", "cadeira", "atmosfera", "celular", "computador", "bibliografia", "sobrevivente", "travesseiro", "vaporizador", "pneumonia", "Holanda", "criptografia", "geografia", "quadriciclo", "invertebrado", "mantegueira", "grampeador", "lantejoula", "excepcional", "ecossistema", "bicarbonato", "marimbondo"};
+
+        
+        String palavraSorteada = palavras[rand.nextInt(palavras.length)];
+        int tamanhoPalavraSorteada = palavraSorteada.length();
+        int numeroDeTentativas = 6; 
+
+       
+        char[] sugestoes = new char[tamanhoPalavraSorteada];
+        for (int i = 0; i < tamanhoPalavraSorteada; i++) {
+            sugestoes[i] = '_';
+        }
+
+        
+        System.out.println("Bem-vindo ao jogo da forca!");
+        System.out.println("A palavra tem " + tamanhoPalavraSorteada + " letras.");
+        System.out.println(sugestoes);
+
+        
+        while (numeroDeTentativas > 0) {
+            System.out.println("Digite uma letra:");
+            String letra = sc.nextLine().toLowerCase();
+
+            
+            boolean letraCorreta = false;
+            for (int i = 0; i < tamanhoPalavraSorteada; i++) {
+                if (palavraSorteada.charAt(i) == letra.charAt(0)) {
+                    sugestoes[i] = letra.charAt(0);
+                    letraCorreta = true;
+                }
+            }
+
+
+            if (!letraCorreta) {
+                numeroDeTentativas--;
+                System.out.println("Letra incorreta! Tentativas restantes: " + numeroDeTentativas);
+            } else {
+                System.out.println("Boa! Você acertou uma letra.");
+            }
+
+           
+            System.out.println(sugestoes);
+
+            
+            if (String.valueOf(sugestoes).equals(palavraSorteada)) {
+                System.out.println("Parabéns! Você adivinhou a palavra: " + palavraSorteada);
+                break;
+            }
+        }
+
+        
+        if (numeroDeTentativas == 0) {
+            System.out.println("Fim de jogo! A palavra era: " + palavraSorteada);
+        }
+    
+ 
+     
+ System.out.println("Deseja jogar novamente? (s/n)");
+        String resposta = sc.nextLine();
+        if (resposta.equalsIgnoreCase("n")){
+            break;
+        
+        }  else if (resposta.equalsIgnoreCase("s")){
+            continue;
+        }
+     }  
+    }
+
+}
+
